@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			GoBall
+		</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+
+			body{
+				background-color: 
+			}
+
+			#stats{
+				margin: auto;
+				background-color: #212529;
+				color: white;
+				width: 35%;
+				padding: 10px;
+				text-align: center;
+				border: 1px solid black;
+				margin-top: 10px;
+				border-radius: 10px;
+			}
+		</style>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1 style="text-align: center;">GoBall</h1>
+
+		<div style="text-align: center;" id="forms">
+			<form method="POST" enctype="application/x-www-form-urlencoded">
+				Enter player's name<br/>
+				<input type="text" name="first_name" style="margin-top: 10px;">
+				<input type="text" name="last_name" style="margin-top: 10px;"><br/>
+				<input type="submit" name="submit" value="Search" class="btn btn-primary" style="margin-top: 10px;">
+			</form>
+		</div>
+
+		<div id="stats" class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<h3>{{.Name}}</h3>
+					<img src={{.HeadShot}} class="img-thumbnail" alt="player-headshot" style="margin-top: 25px;">	
+				</div>
+				<div class="col-sm-6">
+					<table class="table table-dark table-hover">
+					    <tbody>
+					      <tr>
+					        <td>PointsPerGame:</td>
+					        <td>{{.PointsPerGame}}</td>
+					      </tr>
+					      <tr>
+					        <td>AssistsPerGame:</td>
+					        <td>{{.AssistsPerGame}}</td>
+					      </tr>
+					      <tr>
+					        <td>ReboundsPerGame:</td>
+					        <td>{{.ReboundsPerGame}}</td>
+					      </tr>
+					      <tr>
+					        <td>BlocksPerGame:</td>
+					        <td>{{.BlocksPerGame}}</td>
+					      </tr>
+					      <tr>
+					        <td>StealsPerGame:</td>
+					        <td>{{.StealsPerGame}}</td>
+					      </tr>
+					      <tr>
+					        <td>ThreePointPercentage:</td>
+					        <td>{{.ThreePointPercentage}}</td>
+					        <td>%</td>
+					      </tr>
+					      <tr>
+					        <td>FreeThrowPercentage:</td>
+					        <td>{{.FreeThrowPercentage}}</td>
+					        <td>%</td>
+					      </tr>
+					      <tr>
+					        <td>FieldGoalPercentage:</td>
+					        <td>{{.FieldGoalPercentage}}</td>
+					        <td>%</td>
+					      </tr>
+					    </tbody>
+					  </table>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
